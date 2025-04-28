@@ -7,6 +7,16 @@
 
 #include "roster.h"
 
+// destructor
+Roster::~Roster() {
+    for (int i = 0; i < 5; ++i) {
+        if (classRosterArray[i] != nullptr) {
+            delete classRosterArray[i];
+            classRosterArray[i] = nullptr;
+        }
+    }
+}
+
 // add function - sets the instance variables from part D1 and updates the roster.
 void Roster::add(string studentID, string firstName, string lastName, string email,
                  int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {

@@ -12,6 +12,9 @@
 
 class Roster{
 public:
+    // destructor
+    ~Roster();
+    
     // add function - sets the instance variables from part D1 and updates the roster.
     void add(string studentID, string firstName, string lastName, string emailAddress,
              int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
