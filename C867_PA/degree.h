@@ -5,6 +5,9 @@
 //  Created by Jose D. Romero on 4/27/25.
 //
 
+#ifndef DEGREE_H
+#define DEGREE_H
+
 #include <iostream>
 using namespace std;
 
@@ -12,3 +15,5 @@ using namespace std;
 
 // Define an enum for degree programs
 enum DegreeProgram { SECURITY, NETWORK, SOFTWARE };
+
+#endif
