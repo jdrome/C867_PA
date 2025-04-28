@@ -18,9 +18,13 @@ int main() {
                                     "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
                                     "A5,Jose,Romero,jrom387@wgu.edu,26,20,25,30,SOFTWARE"};
     
+    // Print Student Info
+    cout << " Course Title: C867 Scripting and Programming - Applications \n Language: C++ \n Student ID: 011832100 \n Name: Jose D. Romero" << endl;
+    
+    // Create Roster instance, classRoster
     Roster classRoster;
     
-    // Manually split and parse strings for Task E
+    // Parse student Data and add each student to classRoster
     for (int i = 0; i < 5; ++i) {
         stringstream ss(studentData[i]);
         string studentIDStr, firstNameStr, lastNameStr, emailStr, ageStr, day1Str, day2Str, day3Str, degreeStr;
@@ -53,15 +57,42 @@ int main() {
     }
     cout << endl;
     
-    // Testing that all this works so far
+    // Print all students
+    cout << "Printing all students:" << endl;
+    classRoster.printAll();
+    cout << endl;
+    
+    // Print all invalid emails
+    cout << "Printing all invalid emails" << endl;
+    classRoster.printInvalidEmails();
+    cout << endl;
+    
+    // Loop through classRoster and for each element, print the average days in the course
+    cout << "Printing average days in course for each student:" << endl;
+    for (int i = 0; i < 5; ++i) {
+        Student* student = classRoster.getStudentAtIndex(i);
+        if (student != nullptr) {
+            classRoster.printAverageDaysInCourse(student->getStudentId());
+        }
+    }
+    cout << endl;
+    
+    // Print students in SOFTWARE degree program
     cout << "Displaying students by degree program SOFTWARE:" << endl;
     classRoster.printByDegreeProgram(SOFTWARE);
     cout << endl;
     
+    // Remove student A3
     cout << "Removing student A3:" << endl;
     classRoster.remove("A3");
     cout << endl;
     
+    // Print all students in classRoster
+    cout << "Printing all students in classRoster" << endl;
+    classRoster.printAll();
+    cout << endl;
+    
+    // Try to remove student A3 again.
     cout << "Trying to remove student A3 again:" << endl;
     classRoster.remove("A3");
     cout << endl;

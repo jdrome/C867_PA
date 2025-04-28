@@ -38,12 +38,12 @@ public:
     // printByDegreeProgram function - prints out student information for a degree program specified by an enumerated type.
     void printByDegreeProgram(DegreeProgram degreeProgram);
     
+    // getter for classRosterArray
+    Student* getStudentAtIndex(int index) const;
+    
 private:
     // Array of Student Pointers
-    Student *classRosterArray[5];
-    
-    // lastIndex tracks how many students are in classRosterArray
-    int lastIndex = 0;
+    Student* classRosterArray[5];
 };
 
 

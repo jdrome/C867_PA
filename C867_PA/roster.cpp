@@ -93,3 +93,15 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
         }
     }
 }
+
+
+// getter for classRosterArray
+Student* Roster::getStudentAtIndex(int index) const{
+    if (index >= 0 && index < 5) {
+        return classRosterArray[index];
+    }
+    else {
+        cout << "ERROR: Index " << index << " out of bounds." << endl;
+        return nullptr;
+    }
+}
