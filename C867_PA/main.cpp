@@ -6,7 +6,7 @@
 //
 
 #include <iostream>
-#include <string>
+#include "student.h"
 using namespace std;
 
 int main() {
@@ -17,5 +17,13 @@ int main() {
                                     "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
                                     "A5,Jose,Romero,jrom387@wgu.edu,26, 20,25,30,SOFTWARE"};
     
+        // Testing for Task D
+        // Create a test Student object
+        int testDaysLeft[3] = {30, 35, 40};
+        Student testStudent("A1", "John", "Smith", "john.smith@example.com", 20, testDaysLeft, SECURITY);
+
+        // Call the print function to see the output
+        testStudent.print();
     
+    return 0;
 }
